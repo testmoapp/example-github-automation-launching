@@ -1,23 +1,24 @@
 name: Build
 
-on: [push, workflow_dispatch]
-  inputs:
-    environment:
-      description: 'Which environment to deploy to'
-      required: true
-      default: 'staging'
-      type: string
-      options:
-        - staging
-        - production
-    dataset:
-      description: 'Which dataset to use'
-      required: false
-      deafult: 'small'
-      type: string
-      options:
-        - small
-        - large
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Which environment to deploy to"
+        required: true
+        default: "staging"
+        type: string
+        options:
+          - staging
+          - production
+      dataset:
+        description: "Which dataset to use"
+        required: false
+        deafult: "small"
+        type: string
+        options:
+          - small
+          - large
 
 jobs:
   build:
