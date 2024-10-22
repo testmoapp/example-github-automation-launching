@@ -1,6 +1,23 @@
 name: Build
 
 on: [push, workflow_dispatch]
+  inputs:
+    environment:
+      description: 'Which environment to deploy to'
+      required: true
+      default: 'staging'
+      type: string
+      options:
+        - staging
+        - production
+    dataset:
+      description: 'Which dataset to use'
+      required: false
+      deafult: 'small'
+      type: string
+      options:
+        - small
+        - large
 
 jobs:
   build:
@@ -119,4 +136,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo "Deploying .."
+      - run: |
+          echo "Deploying to ${{ github.event.inputs.environment }} environment"
+          echo "Using ${{ github.event.inputs.dataset }} dataset"
