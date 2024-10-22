@@ -4,17 +4,17 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        description: "Which environment to deploy to"
+        description: Which environment to deploy to
         required: true
-        default: "staging"
+        default: staging
         type: string
         options:
           - staging
           - production
       dataset:
-        description: "Which dataset to use"
+        description: Which dataset to use
         required: false
-        deafult: "small"
+        deafult: small
         type: string
         options:
           - small
