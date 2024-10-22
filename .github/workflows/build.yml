@@ -16,8 +16,8 @@ jobs:
       testmo-run-id: ${{ steps.run-tests.outputs.testmo-run-id }}
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
@@ -72,8 +72,8 @@ jobs:
         ci_total: [4]
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@4
+      - uses: actions/setup-node@v4
         with:
           node-version: 19
           cache: npm
@@ -98,8 +98,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
