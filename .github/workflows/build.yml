@@ -14,7 +14,7 @@ on:
       dataset:
         description: Which dataset to use
         required: false
-        deafult: small
+        default: small
         type: string
         options:
           - small
